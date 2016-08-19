@@ -14,23 +14,24 @@ export class I18nServiceConfig {
 export class I18nService {
   i18n: any;
   private init;
+  use:any[];
+  config:any[];
 
   whenReady$: Observable<boolean>;
   private whenReadyObserver: any;
 
-  constructor(@Optional private config: I18nServiceConfig) {
+  constructor() {
     this.init = false;
     this.i18n = i18next;
     this.whenReady$ = new Observable(observer => {
       this.whenReadyObserver = observer;
-      let i18nextUse = config.use;
-      if (config.use) {
-        for (let i = 0; i < i18nextUse.length; i++) {
-          this.i18n.use(i18nextUse[i]);
+      if (this.use) {
+        for (let i = 0; i < this.use.length; i++) {
+          this.i18n.use(this.use[i]);
         }
       }
       this.i18n.init(
-        config.config,
+        this.config,
         (err, t) => {
           this.init = true;
           this.whenReadyObserver.next(true);
@@ -40,6 +41,21 @@ export class I18nService {
 
   t(s: string, opts: any = undefined) {
     return this.i18n.t(s, opts);
+  }
+
+  setUse(use:any[]){
+      for (let i = 0; i < this.use.length; i++) {
+        this.i18n.use(this.use[i]);
+      }
+  }
+
+  setConfig(config:any[]){
+      this.config = config;
+      this.i18n.init(
+        this.config,
+        (err, t) => {
+          this.init = true;
+        });
   }
 
   tPromise(s: string, opts: any = undefined) {
