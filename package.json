@@ -26,7 +26,7 @@
   "scripts": {
     "prepublish": "npm install --ignore-scripts && typings install && tsc"
   },
-  "version": "0.1.7",
+  "version": "0.1.8",
   "bugs": {
     "url": "https://github.com/asqwrd/ng2-i18next/issues"
   },
