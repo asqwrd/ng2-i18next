@@ -44,12 +44,13 @@ export class I18nService {
   }
 
   setUse(use:any[]){
+      this.use = use;
       for (let i = 0; i < this.use.length; i++) {
         this.i18n.use(this.use[i]);
       }
   }
 
-  setConfig(config:any[]){
+  setConfig(config:any){
       this.config = config;
       this.i18n.init(
         this.config,
