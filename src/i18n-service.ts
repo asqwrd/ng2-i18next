@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable,Optional} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/share';
 
@@ -18,7 +18,7 @@ export class I18nService {
   whenReady$: Observable<boolean>;
   private whenReadyObserver: any;
 
-  constructor(private config: I18nServiceConfig) {
+  constructor(@Optional private config: I18nServiceConfig) {
     this.init = false;
     this.i18n = i18next;
     this.whenReady$ = new Observable(observer => {
