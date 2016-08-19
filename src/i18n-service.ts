@@ -15,7 +15,7 @@ export class I18nService {
   i18n: any;
   private init;
   use:any[];
-  config:any[];
+  config:any;
 
   whenReady$: Observable<boolean>;
   private whenReadyObserver: any;
