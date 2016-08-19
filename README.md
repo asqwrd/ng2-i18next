@@ -1,1 +1,1 @@
-This is merely a fork of ng2-i18next from actimeo.  I take no credit for this.  I merely removed a few lines of code that casued issues for me.  If the orginal dev finally fixes this issue ill remove the package and use his/hers
+This is merely a fork of ng2-i18next from actimeo.  I take no credit for this.  I merely removed a few lines of code that caused issues for me.  If the original dev finally fixes this issue ill remove the package and use his/hers
